@@ -7,6 +7,6 @@
 		<typeAlias type="com.jhta.groupware.work.vo.WorkVo" alias="work"/>
 	</typeAliases>
 	<mappers>
-    	<mapper resource="com/jhta/mybatis/WorkMapper.xml"/>
+    	<mapper resource="com/jhta/groupware/mybatis/WorkMapper.xml"/>
 	</mappers>
 </configuration>
