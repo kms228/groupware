@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,11 +15,18 @@
 	<div id="header">
 		<tiles:insertAttribute name="header"/>
 	</div>
-	<div id="side">
-		<tiles:insertAttribute name="side"/>
-	</div>
-	<div id="main">
-		<tiles:insertAttribute name="main"/>
+	<div id="body">
+		<div id="side">
+			<div id="sidetop">
+				<tiles:insertAttribute name="sidetop"/>
+			</div>
+			<div id="sidebottom">
+				<tiles:insertAttribute name="sidebottom"/>
+			</div>
+		</div>
+		<div id="main">
+			<tiles:insertAttribute name="main"/>
+		</div>
 	</div>
 	<div id="footer">
 		<tiles:insertAttribute name="footer"/>

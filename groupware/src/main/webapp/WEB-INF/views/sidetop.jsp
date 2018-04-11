@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div>
-	<h1>side</h1>
+	<h1>sidetop</h1>
 </div>
