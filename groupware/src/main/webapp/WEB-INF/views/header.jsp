@@ -10,6 +10,6 @@
 		<li><a href="<c:url value='/'/>">일정</a></li>
 		<li><a href="<c:url value='/'/>">게시판</a></li>
 		<li><a href="<c:url value='/'/>">사원관리</a></li>
-		<li><a href="<c:url value='/request_work'/>">근태</a></li>
+		<li><a href="<c:url value='/'/>">근태</a></li>
 	</ul>
 </div>
