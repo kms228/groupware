@@ -46,9 +46,7 @@
 <%-- <script src="<c:url value='/'/>resources/dist/js/pages/dashboard.js"></script> --%>
 <!-- AdminLTE for demo purposes -->
 <script src="<c:url value='/'/>resources/dist/js/demo.js"></script>
-<<<<<<< HEAD
 <script src="<c:url value='/'/>resources/js/ckeditor.js"></script>
-=======
 <!-- fullCalendar -->
 <script src="<c:url value='/'/>resources/plugins/fullcalendar/fullcalendar.js"></script>
 
