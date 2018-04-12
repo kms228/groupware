@@ -7,8 +7,8 @@
     <section class="sidebar">
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-          <a href="#">
+        <li class="treeview">
+          <a href="<c:url value='/'/>signmain">
             <i class="fa fa-dashboard"></i><span>결재</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
