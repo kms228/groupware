@@ -4,8 +4,7 @@
 
 	<definition name=".main" template="/WEB-INF/views/layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/header.jsp"/>
-		<put-attribute name="sidetop" value="/WEB-INF/views/sidetop.jsp"/>
-		<put-attribute name="sidebottom" value="/WEB-INF/views/sidebottom.jsp"/>
+		<put-attribute name="side" value="/WEB-INF/views/side.jsp"/>
 		<put-attribute name="main" value="/WEB-INF/views/home.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>		
 	</definition>
