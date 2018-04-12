@@ -11,4 +11,8 @@ public class HomeController {
 	public String home() {
 		return ".main";
 	}
+	@RequestMapping("/calendar")
+	public String calendar() {
+		return ".calendar";
+	}
 }

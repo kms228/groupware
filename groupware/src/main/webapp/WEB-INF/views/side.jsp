@@ -9,7 +9,7 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>결재</span>
+            <i class="fa fa-dashboard"></i><span>결재</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -17,21 +17,7 @@
           <ul class="treeview-menu">
             <li class="active"><a href="<c:url value='/'/>signnew"><i class="fa fa-circle-o"></i>새문서작성</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i>진행결재문서</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>Layout Options</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+             <li><a href="index2.html"><i class="fa fa-circle-o"></i>완료결재문서</a></li>
           </ul>
         </li>
         <li>
@@ -60,18 +46,19 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
+            <!-- ------------------------------------------------------민수-------------------------------------------------- -->
             <span>근태</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li><a href="<c:url value='/work'/>"><i class="fa fa-circle-o"></i> 근태 신청</a></li>
+            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> 신청 내역</a></li>
+            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> 승인 요청 내역</a></li>
+            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> 근태 현황 보기</a></li>
+            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> (관리자)근태 설정</a></li>
+            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> (관리자)전체 리스트</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -100,7 +87,7 @@
           </ul>
         </li>
         <li>
-          <a href="pages/calendar.html">
+          <a href="<c:url value='/'/>calendar">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-red">3</small>
