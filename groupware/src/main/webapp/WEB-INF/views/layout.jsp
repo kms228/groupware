@@ -9,50 +9,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="<c:url value='/resources/css/common.css'/>"/>
-  <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="<c:url value='/'/>resources/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<c:url value='/'/>resources/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<c:url value='/'/>resources/dist/css/skins/_all-skins.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-</head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div id="wrapper">
-	<div id="header">
-		<tiles:insertAttribute name="header"/>
-	</div>
-	<div id="body">
-		<div id="side">
-			<tiles:insertAttribute name="side"/>
-		</div>
-		<div id="main">
-			<tiles:insertAttribute name="main"/>
-		</div>
-	</div>
-	<div id="footer">
-		<tiles:insertAttribute name="footer"/>
-	</div>
-</div>
-<!-- jQuery 2.2.3 -->
-<script src="<c:url value='/'/>resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <!-- jQuery 2.2.3 -->
+	<script src="<c:url value='/'/>resources/plugins/jQuery/jquery-2.2.3.min.js" type="text/javascript"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -62,8 +20,8 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="<c:url value='/'/>resources/bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="<c:url value='/'/>resources/plugins/morris/morris.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> -->
+<%-- <script src="<c:url value='/'/>resources/plugins/morris/morris.min.js"></script> --%>
 <!-- Sparkline -->
 <script src="<c:url value='/'/>resources/plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -85,9 +43,60 @@
 <!-- AdminLTE App -->
 <script src="<c:url value='/'/>resources/dist/js/app.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<c:url value='/'/>resources/dist/js/pages/dashboard.js"></script>
+<%-- <script src="<c:url value='/'/>resources/dist/js/pages/dashboard.js"></script> --%>
 <!-- AdminLTE for demo purposes -->
 <script src="<c:url value='/'/>resources/dist/js/demo.js"></script>
+<<<<<<< HEAD
 <script src="<c:url value='/'/>resources/js/ckeditor.js"></script>
+=======
+<!-- fullCalendar -->
+<script src="<c:url value='/'/>resources/plugins/fullcalendar/fullcalendar.js"></script>
+
+  <link rel="stylesheet" href="<c:url value='/resources/css/common.css'/>"/>
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="<c:url value='/'/>resources/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<c:url value='/'/>resources/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="<c:url value='/'/>resources/dist/css/skins/_all-skins.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/iCheck/flat/blue.css">
+  <!-- Morris chart -->
+  <%-- <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/morris/morris.css"> --%>
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/datepicker/datepicker3.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- fullCalendar -->  
+  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/fullcalendar/fullcalendar.print.css" media="print">
+  <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/fullcalendar/fullcalendar.css">
+  
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div id="wrapper">
+	<div id="header">
+		<tiles:insertAttribute name="header"/>
+	</div>
+	<div id="body">
+		<div id="side">
+			<tiles:insertAttribute name="side"/>
+		</div>
+		<div id="main">
+			<tiles:insertAttribute name="main"/>
+		</div>
+	</div>
+	<div id="footer">
+		<tiles:insertAttribute name="footer"/>
+	</div>
+</div>
 </body>
 </html>

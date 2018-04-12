@@ -142,7 +142,7 @@ public static String gettime(int mountdate){
 								<input type="radio" id="opttimechoice_am" name="opttimechoice" value="am" checked="checked"> <label class="timechoice" for="opttimechoice_am">오전 &nbsp;</label>
 								<input type="radio" id="opttimechoice_pm" name="opttimechoice" value="pm"> <label class="timechoice" for="opttimechoice_pm">오후 </label>
 							</span>
-							--> 
+						--> 
 							<input type="text" id="txtsdate">      
 						</td>
 					</tr>
