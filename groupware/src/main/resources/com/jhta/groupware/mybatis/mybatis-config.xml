@@ -5,8 +5,11 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.jhta.groupware.work.vo.WorkVo" alias="work"/>
+		<typeAlias type="com.jhta.groupware.member.vo.MemberAccountVo" alias="account"/>
 	</typeAliases>
 	<mappers>
     	<mapper resource="com/jhta/groupware/mybatis/WorkMapper.xml"/>
+    	<mapper resource="com/jhta/groupware/mybatis/JoinMapper.xml"/>
+    	<mapper resource="com/jhta/groupware/mybatis/LoginMapper.xml"/>
 	</mappers>
 </configuration>
