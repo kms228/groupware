@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div>
+<div class="header">
 	<header class="main-header">
 		<!-- Logo -->
 		<a href="index2.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
