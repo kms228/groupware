@@ -88,5 +88,6 @@
 <script src="<c:url value='/'/>resources/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<c:url value='/'/>resources/dist/js/demo.js"></script>
+<script src="<c:url value='/'/>resources/js/ckeditor.js"></script>
 </body>
 </html>
