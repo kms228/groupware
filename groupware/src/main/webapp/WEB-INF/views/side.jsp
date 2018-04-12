@@ -100,7 +100,7 @@
           </ul>
         </li>
         <li>
-          <a href="pages/calendar.html">
+          <a href="<c:url value='/'/>calendar">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-red">3</small>
