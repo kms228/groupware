@@ -9,6 +9,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="<c:url value='/resources/css/common.css'/>">
+<link rel="stylesheet" href="<c:url value='/resources/css/jquery-ui.min.css'/>">
+<script type="text/javascript" src="<c:url value='/resources/js/jquery-3.3.1.min.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/resources/js/jquery-ui.min.js'/>"></script>
 </head>
 <body>
 <div id="wrap">
