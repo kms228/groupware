@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SignMainController {
 
-	@RequestMapping("/sign_main")
+	@RequestMapping("/signmain")
 	public String signMain() {
 		return ".sign.sign_main";
 	}

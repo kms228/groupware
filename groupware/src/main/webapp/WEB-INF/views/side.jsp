@@ -7,9 +7,9 @@
     <section class="sidebar">
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>결재</span>
+        <li class="treeview">
+          <a href="<c:url value='/'/>signmain">
+            <i class="fa fa-dashboard"></i><span>결재</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -17,6 +17,7 @@
           <ul class="treeview-menu">
             <li class="active"><a href="<c:url value='/'/>signnew"><i class="fa fa-circle-o"></i>새문서작성</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i>진행결재문서</a></li>
+             <li><a href="index2.html"><i class="fa fa-circle-o"></i>완료결재문서</a></li>
           </ul>
         </li>
         <li>

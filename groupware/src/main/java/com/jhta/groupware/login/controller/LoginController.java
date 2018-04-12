@@ -21,7 +21,7 @@ public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
-		return ".login.login";
+		return ".login.login1";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -32,13 +32,13 @@ public class LoginController {
 		boolean n = service.login(map);
 		if (n) {
 			MemberAccountVo vo = new MemberAccountVo();
-			System.out.println(vo.getACNT_id());
+			System.out.println(ACNT_ID);
 			System.out.println("된다!!!");
 			session.setAttribute("ACNT_ID", ACNT_ID);
 			return "redirect:/";
 		} else {
 			System.out.println("안되!!!");
-			return "페이지설정하자";
+			return ".login.login1";
 		}
 	}
 

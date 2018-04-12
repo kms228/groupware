@@ -12,11 +12,17 @@
 </head>
 <body>
 <form action="<c:url value='/'/>join" method="post">
+<table border="0">
+
 아이디<input type="text" name="ACNT_ID"><br>
 비밀번호<input type="password" name="ACNT_PWD"><br>
 비밀번호확인<input type="password" name="ACNT_PWD2"><br>
 <input type="submit" value="가입">
 <input type="hidden" name="EMP_NUM" value="1"><br>
+
+
+
+</table>
 </form>
 </body>
 </html>
