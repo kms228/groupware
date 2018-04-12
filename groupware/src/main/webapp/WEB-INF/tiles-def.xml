@@ -9,7 +9,6 @@
 		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>		
 	</definition>
 	
-	
 	<!-- 
 		뷰이름이 .admin.notice 라면
 		{1}의 위치에 admin
