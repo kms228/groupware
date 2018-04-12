@@ -1,13 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.Calendar"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.DecimalFormat"%>
-<link rel="stylesheet" href="<c:url value='/resources/css/jquery-ui.min.css'/>">
-<script type="text/javascript" src="<c:url value='/resources/js/jquery-3.3.1.min.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/resources/js/jquery-ui.min.js'/>"></script>
-
 <%!
 //년월일 구하기
 public static String getdate(int mountdate){
@@ -54,14 +49,20 @@ public static String gettime(int mountdate){
 	return date;
 }
 %>
+<!-- jahee datepicker -->
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
 <div>
-	<h1 class="corpor_title"> 근태 신청</h1><br>
-	<table cellpadding="0" cellspacing="0" class="corporHeaderTable">
+	<h3 class="corpor_title"><span class="glyphicon glyphicon-time"></span> 출근 / 퇴근</h3><br>
+	<table cellpadding="0" cellspacing="0">
 		<colgroup>
-			<col width="20%">
-			<col width="20%">
-			<col width="20%">                            
-			<col width="20%">
+			<col width="10%">
+			<col width="10%">
+			<col width="10%">                            
+			<col width="10%">
+			<col width="10%">
+			<col width="10%">
 		</colgroup>
 		<tbody>
 			<tr>
@@ -69,137 +70,120 @@ public static String gettime(int mountdate){
 				<th class="date"><%out.print (getdate(0));%></th>
 				<th align="center">
 				<!-- 출근버튼 -->                   
-					<span class="gw_btn_pack Rblue">
-						<button type="button" id="btn_workstart" title="출근" style="width: 100px">출근</button>
-					</span>
+					<button type="button" class="btn btn-block btn-primary" id="btn_workstart" title="출근" style="width: 100px">출근</button>
+				</th>
+				<td>
 					<input type="text" id="txtworkstart" class="adminInput" value="" readonly="readonly">
-				</th> 
-				<th align="center">
-					<span class="gw_btn_pack red">
-						<button type="button" id="btn_workend" title="퇴근" style="width: 100px">퇴근</button>
-					</span>
+				</td>
+				<th>
+					<button type="button" class="btn btn-block btn-danger" id="btn_workend" title="퇴근" style="width: 100px">퇴근</button>
+				</th>
+				<td>
 					<input type="text" id="txtworkend" class="adminInput" value="" readonly="readonly">
-				</th> 
+				</td>
 				<th id="div_holiday" class="holidayth"><%out.print (getyear(0));%> 휴일 </th>
 			</tr>
 		</tbody>
 	</table>
 	<br>
-	<h1 class="corpor_title"> 근태 현황</h1><br>
-	<div class="corporTaWrap">
-		<form> 
-	    	<table cellpadding="0" cellspacing="0" class="corporWriteTable">
-				<colgroup>
-					<col width="20%">
-					<col width="80%">
-				</colgroup>
-				<tbody>
-					<tr>
-						<th>연차 현황</th>
-						<td>
-							<strong>
-								 총 연차 일수 : <label class="vacationLeave" style="color:green;">30 </label>      
-								 사용일 : <label class="vacationLeave" style="color:blue;">2.5 </label>     
-								 가용일 : <label class="vacationLeave" style="color:red;">27.5 </label>
-							</strong> 
-						</td>
-					</tr>
-	                                
-					<tr>    
-						<th scope="row"><label for="Choice">구분</label></th>
-						<td>
-							<select id="category_type" name="category_type" data-placeholder="신청 항목을 선택하세요." class="chosen-select" style="width: 220px;">
-								<option id="vactaion_100" value="Full Day">연차</option>
-								<option id="vactaion_101" value="Half Day">반차</option>
-								<option id="vactaion_102" value="Late Come">지각</option>
-								<option id="vactaion_103" value="Early Go">조퇴</option>
-								<option id="vactaion_105" value="Night Shift">야근</option>
-								<option id="vactaion_106" value="Business Trip">출장</option>
-							</select>
-						</td>
-					</tr>
-	                                
-					<tr>
-						<th scope="row">일자/시간</th>
-						<td>
-						<!--
-							<input type="text" id="txtsdate" name="txtsdate" onchange="showTime();" onfocus="return calendershow(this, null);" value="" class="corporDInput" readonly="readonly">
-							<label for="sdate" class="imgLabel"> <img src="/segio/works/attendance/image/calendar_img.gif" id="imgsdate" onmouseup="calendershow(document.getElementById('txtsdate'), this);"></label>                          
-							<label id="lbltilt" for="firstMonth" class="tiltLabel"> ~  </label>                         
-							<input type="text" id="txtedate" name="txtedate" onchange="showTime();" onfocus="calendershow(this, null);" value="" class="corporDInput" readonly="readonly">
-							<label id="lbledate" for="edate" class="imgLabel"><img src="/segio/works/attendance/image/calendar_img.gif" id="imgedate" onmouseup="calendershow(document.getElementById('txtedate'), this);"></label>                      
-							<label id="lblspace" for="space">&nbsp;&nbsp;&nbsp;</label>
-	
-							 vaction time setting      
-							<label id="lblstime" for="txtstime" class="imgLabel" style="display: none;"><img src="/segio/works/attendance/image/start.png" id="imgstime"></label>
-							<input type="text" id="txtstime" name="txtstime" class="timeInput hasPtTimeSelect" value="" readonly="readonly" style="display: none;"> 
-							<label id="lbltilttime" for="time" class="tiltLabel" style="display: none;"> ~  </label>
-							<label id="lbletime" for="txtetime" class="imgLabel" style="display: none;"><img src="/segio/works/attendance/image/end.png" id="imgetime"></label>
-							<input type="text" id="txtetime" name="txtetime" class="timeInput hasPtTimeSelect" value="" style="display: none;">   
-	
-							 Half day selection ap/ or pm (get times from admin setting
-	 						<span id="spantimechoiceam" style="margin-left:10px; display: none;">
-								<input type="radio" id="opttimechoice_am" name="opttimechoice" value="am" checked="checked"> <label class="timechoice" for="opttimechoice_am">오전 &nbsp;</label>
-								<input type="radio" id="opttimechoice_pm" name="opttimechoice" value="pm"> <label class="timechoice" for="opttimechoice_pm">오후 </label>
-							</span>
-						--> 
-							<input type="text" id="txtsdate">      
-						</td>
-					</tr>
-					<tr>
-						<th>대상자</th>
-						<td style="height:31px; ">
-							<ul class="corporUl">  
-								<input type="radio" class="corporRadio" id="optusertype_1" name="usertype" value="self" checked="checked"><label for="optusertype_1">본인</label> &nbsp;
-								<input type="radio" class="corporRadio" id="optusertype_2" name="usertype" value="other"><label for="optusertype_2">타 사용자</label>
-								<!--<div id="divAdminRequestOtherUser" class="divAdminRequestOtherUser" >-->
-								<span id="divAdminRequestOtherUser" class="request_users" style="display: none;">
-									<input type="text" class="corporInput" id="txtrequest_uname" name="txtrequestbyadmin_uname" value="" readonly="readonly">
-									<!--Only User Id will be saved in database. -->
-									<input type="hidden" class="corporInput" id="txtrequest_users" name="txtrequest_users" value="" readonly="readonly">
-									<span class="gw_btn_pack blue">
-										<button type="button" id="organization_approval" title="조직도">조직도</button>
-									</span>
-								</span>
-							</ul>
-						</td>
-					</tr>
-					<tr>
-						<th>사유</th>
-						<td><textarea id="content" name="content" class="companionText" placeholder="사유 또는 용무." maxlength="250" cols="50"></textarea></td>
-					</tr>
-					<tr>
-						<th>첨부</th>
-						<td><input type="file" class="fileInput" title="파일첨부" name="fileattach" id="fileattach"></td>
-					</tr>
-					<tr>
-						<th scope="row"><label for="corporUser">결재선 선택</label></th>
-						<td>
-							<input type="text" class="corporInput" id="txtapprover_name" name="txtapprover_name" readonly="readonly">
-							<input type="hidden" class="corporInput" id="txtapprover_uid" name="txtapprover_uid">
-							<span class="gw_btn_pack blue"><button type="button" id="button_approval_user" title="조회">조직도</button></span>
-							(결재 순서에 맞춰 선택해 주세요.)
-						</td>
-					</tr>  
-				</tbody>
-			</table>
-		</form>
-	</div>
-</div>
+	<div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">근태 신청</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+              	<div class="form-group">
+                  <label for="work1">연차 현황</label>
+                  	<div class="form-control">
+	                  	총 연차 일수 : <label style="color:green;">30 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 사용일 : <label style="color:blue;">2.5 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 가용일 : <label style="color:red;">27.5 </label>
+					</div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">구분</label>
+                  <div class="form-group">
+                  <select class="form-control" id="exampleInputEmail1">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                  </select>
+                  </div>
+                <div>
+                	<div class="form-group">
+                  		<label for="exampleInputPassword1">일자/시간</label>
+               			<!-- jahee datepicker -->
+               			<div class="container">
+						    <div class='col-md-5'>
+						        <div class="form-group">
+						            <div class='input-group date' id='datetimepicker6'>
+						                <input type='text' class="form-control" />
+						                <span class="input-group-addon">
+						                    <span class="glyphicon glyphicon-calendar"></span>
+						                </span>
+						            </div>
+						        </div>
+						    </div>
+						    <div class='col-md-5'>
+						        <div class="form-group">
+						            <div class='input-group date' id='datetimepicker7'>
+						                <input type='text' class="form-control" />
+						                <span class="input-group-addon">
+						                    <span class="glyphicon glyphicon-calendar"></span>
+						                </span>
+						            </div>
+						        </div>
+						    </div>
+						</div>
+                	</div>
+	                <!-- /.input group -->
+	              </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputPassword3">사유</label>
+                  <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">첨부</label>
+                  <input type="file" id="exampleInputFile">
+                  <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword2">결재선 선택</label>
+                  <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Check me out
+                  </label>
+                </div>
+              </div>
+              </div>
+              <!-- /.box-body -->
 
-<script type="text/javascript">
-$(function(){
-	//text를 달력으로
-	$("#txtsdate").datepicker({
-		dateFormat:"yy/mm/dd",//날짜 포맷형식
-		showMonthAfterYear:true,
-		monthNames:["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
-		yearSuffix:"년",
-		dayNamesMin:["일","월","화","수","목","금","토"],
-		showAnim:"clip",
-		showOn:"button",
-		buttonText:"달력"
-	});
-});
-	showTime(){}
-</script>
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+
+
+<script>
+    $(function () {
+        $('#datetimepicker6').datetimepicker();
+        $('#datetimepicker7').datetimepicker({
+            useCurrent: false //Important! See issue #1075
+        });
+        $("#datetimepicker6").on("dp.change", function (e) {
+            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker7").on("dp.change", function (e) {
+            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+</script>	

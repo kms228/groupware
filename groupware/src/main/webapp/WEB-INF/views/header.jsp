@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<div>
+<div class="header">
 	<header class="main-header">
 		<!-- Logo -->
 		<a href="index2.html" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -13,6 +13,18 @@
 			<div class="navbar-custom-menu">
 				<ul class="nav navbar-nav">
 					<!-- Messages: style can be found in dropdown.less-->
+					
+
+				
+					<c:choose>
+					<c:when test="${ACNT_ID==null}">
+					<li class="dropdown login-menu"><a href="<c:url value='/login'/>">로그인</a>
+					</c:when>					
+					<c:when test="${ACNT_ID!=null}">
+					<li class="dropdown logout-menu"><a href="<c:url value='/logout'/>">${ACNT_ID }님 로그아웃</a>
+					</c:when>
+					</c:choose>
+					
 					<li class="dropdown messages-menu"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"> <i
 							class="fa fa-envelope-o"></i> <span class="label label-success">4</span>
