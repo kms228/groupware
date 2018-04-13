@@ -16,6 +16,6 @@
 
     	<mapper resource="com/jhta/groupware/mybatis/JoinMapper.xml"/>
     	<mapper resource="com/jhta/groupware/mybatis/LoginMapper.xml"/>
-
+		<mapper resource="com/jhta/groupware/mybatis/CalendarMapper.xml"/>
 	</mappers>
 </configuration>
