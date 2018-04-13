@@ -6,5 +6,8 @@
 	<select id="select" parameterType="hashmap" resultType="account">
 		select * from account where ACNT_ID=#{ACNT_ID} and ACNT_PWD=#{ACNT_PWD}
 	</select>
+	<select id="getinfo" parameterType="int" resultType="account">
+		select * from employee where EMP_NUM=#{EMP_NUM}
+	</select>
 
 </mapper>
