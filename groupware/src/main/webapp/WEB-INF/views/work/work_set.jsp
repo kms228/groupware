@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div>
-	<h3><span class="glyphicon glyphicon-cog"></span>근태 설정</h3>
+	<h3><span class="glyphicon glyphicon-cog"></span> 근태 설정</h3>
 	<div class="box">
-		<div class="col-md-6">
+		<div class="col-md-12">
           <!-- Custom Tabs -->
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
@@ -16,20 +16,139 @@
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="tab_1">
-                <b>시간 설정</b>
-                <table>
-                	
-                </table>
+                
+                <!--  -->
+				<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"><span class="glyphicon glyphicon-time"></span> 시간 설정</h3>
 
-                <p>Exactly like the original bootstrap tabs except you should use
-                  the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-                A wonderful serenity has taken possession of my entire soul,
-                like these sweet mornings of spring which I enjoy with my whole heart.
-                I am alone, and feel the charm of existence in this spot,
-                which was created for the bliss of souls like mine. I am so happy,
-                my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                that I neglect my talents. I should be incapable of drawing a single stroke
-                at the present moment; and yet I feel that I never was a greater artist than now.
+              
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tbody>
+	                <tr>
+	                  <th>출/퇴근 시간</th>
+	                  <td>
+	                  	출근
+	                  	<div class="form-group">
+		                  <label>Time picker:</label>
+		
+		                  <div class="input-group">
+		                    <input type="text" class="form-control timepicker">
+		
+		                    <div class="input-group-addon">
+		                      <i class="fa fa-clock-o"></i>
+		                    </div>
+		                  </div>
+		                  <!-- /.input group -->
+		                </div>
+	                  	 퇴근
+	                  	 <div class="form-group">
+		                  <label>Time picker:</label>
+		
+		                  <div class="input-group">
+		                    <input type="text" class="form-control timepicker">
+		
+		                    <div class="input-group-addon">
+		                      <i class="fa fa-clock-o"></i>
+		                    </div>
+		                  </div>
+		                  <!-- /.input group -->
+		                </div>
+	                  </td>
+	                </tr>
+	                <tr>
+	               	  <th>반차 시간</th>
+	               	  <td>
+	               	  	오전
+	               	  	<div class="form-group">
+		                  <label>Time picker:</label>
+		
+		                  <div class="input-group">
+		                    <input type="text" class="form-control timepicker">
+		
+		                    <div class="input-group-addon">
+		                      <i class="fa fa-clock-o"></i>
+		                    </div>
+		                  </div>
+		                  <!-- /.input group -->
+		                </div>
+		                <div class="form-group">
+		                  <label>Time picker:</label>
+		
+		                  <div class="input-group">
+		                    <input type="text" class="form-control timepicker">
+		
+		                    <div class="input-group-addon">
+		                      <i class="fa fa-clock-o"></i>
+		                    </div>
+		                  </div>
+		                  <!-- /.input group -->
+		                </div>
+	               	  	 오후
+	               	  	 <div class="form-group">
+		                  <label>Time picker:</label>
+		
+		                  <div class="input-group">
+		                    <input type="text" class="form-control timepicker">
+		
+		                    <div class="input-group-addon">
+		                      <i class="fa fa-clock-o"></i>
+		                    </div>
+		                  </div>
+		                  <!-- /.input group -->
+		                </div>
+		                <div class="form-group">
+		                  <label>Time picker:</label>
+		
+		                  <div class="input-group">
+		                    <input type="text" class="form-control timepicker">
+		
+		                    <div class="input-group-addon">
+		                      <i class="fa fa-clock-o"></i>
+		                    </div>
+		                  </div>
+		                  <!-- /.input group -->
+		                </div>
+	               	  </td>
+	                </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+				
+				<!--  -->
+                 <!--  -->
+				<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"><span class="glyphicon glyphicon-wrench"></span> 기능 설정</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tbody>
+	                <tr>
+	                  <th>출/퇴근 기능</th><td>출/퇴근 허용IP 설정</td>
+	                </tr>
+	                <tr>
+	               	  <th>로그인 기능</th><td>로그인시 출근 자동 등록</td>
+	                </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+				
+				<!--  -->
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2">
@@ -83,3 +202,16 @@
         </div>
 	</div>
 </div>
+<!-- bootstrap time picker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+
+<script>
+	$(function(){
+		  //Timepicker
+	    $(".timepicker").timepicker({
+	      showInputs: false
+	    });
+
+	});
+</script>
