@@ -16,137 +16,170 @@
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="tab_1">
-                
                 <!--  -->
-				<div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title"><span class="glyphicon glyphicon-time"></span> 시간 설정</h3>
-
-              
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-                <tbody>
-	                <tr>
-	                  <th>출/퇴근 시간</th>
-	                  <td>
-	                  	출근
-	                  	<div class="form-group">
-		                  <label>Time picker:</label>
-		
-		                  <div class="input-group">
-		                    <input type="text" class="form-control timepicker">
-		
-		                    <div class="input-group-addon">
-		                      <i class="fa fa-clock-o"></i>
-		                    </div>
-		                  </div>
-		                  <!-- /.input group -->
-		                </div>
-	                  	 퇴근
-	                  	 <div class="form-group">
-		                  <label>Time picker:</label>
-		
-		                  <div class="input-group">
-		                    <input type="text" class="form-control timepicker">
-		
-		                    <div class="input-group-addon">
-		                      <i class="fa fa-clock-o"></i>
-		                    </div>
-		                  </div>
-		                  <!-- /.input group -->
-		                </div>
-	                  </td>
-	                </tr>
-	                <tr>
-	               	  <th>반차 시간</th>
-	               	  <td>
-	               	  	오전
-	               	  	<div class="form-group">
-		                  <label>Time picker:</label>
-		
-		                  <div class="input-group">
-		                    <input type="text" class="form-control timepicker">
-		
-		                    <div class="input-group-addon">
-		                      <i class="fa fa-clock-o"></i>
-		                    </div>
-		                  </div>
-		                  <!-- /.input group -->
-		                </div>
-		                <div class="form-group">
-		                  <label>Time picker:</label>
-		
-		                  <div class="input-group">
-		                    <input type="text" class="form-control timepicker">
-		
-		                    <div class="input-group-addon">
-		                      <i class="fa fa-clock-o"></i>
-		                    </div>
-		                  </div>
-		                  <!-- /.input group -->
-		                </div>
-	               	  	 오후
-	               	  	 <div class="form-group">
-		                  <label>Time picker:</label>
-		
-		                  <div class="input-group">
-		                    <input type="text" class="form-control timepicker">
-		
-		                    <div class="input-group-addon">
-		                      <i class="fa fa-clock-o"></i>
-		                    </div>
-		                  </div>
-		                  <!-- /.input group -->
-		                </div>
-		                <div class="form-group">
-		                  <label>Time picker:</label>
-		
-		                  <div class="input-group">
-		                    <input type="text" class="form-control timepicker">
-		
-		                    <div class="input-group-addon">
-		                      <i class="fa fa-clock-o"></i>
-		                    </div>
-		                  </div>
-		                  <!-- /.input group -->
-		                </div>
-	               	  </td>
-	                </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
 				
-				<!--  -->
-                 <!--  -->
-				<div class="col-xs-12">
+		          <div class="box">
+		            <div class="box-header">
+		              <h3 class="box-title"><span class="glyphicon glyphicon-time"></span> 시간 설정</h3>
+		            </div>
+		            <!-- /.box-header -->
+		            <div class="box-body table-responsive no-padding">
+		            <form>
+		              <table class="table table-hover">
+		                <tbody>
+			                <tr>
+			                  <th>출/퇴근 시간</th>
+			                  <td>
+			                  <div class="col-md-6">
+			                  	출근
+			                  	<div class="bootstrap-timepicker">
+					                <div class="form-group">
+					                  <div class="input-group">
+					                    <input type="text" class="form-control timepicker">
+					
+					                    <div class="input-group-addon">
+					                      <i class="fa fa-clock-o"></i>
+					                    </div>
+					                  </div>
+					                  <!-- /.input group -->
+					                </div>
+					                <!-- /.form group -->
+					              </div>
+							  </div>
+							  <div class="col-md-6">
+			                  	 퇴근
+			                  	 <div class="bootstrap-timepicker">
+					                <div class="form-group">
+					                  <div class="input-group">
+					                    <input type="text" class="form-control timepicker">
+					
+					                    <div class="input-group-addon">
+					                      <i class="fa fa-clock-o"></i>
+					                    </div>
+					                  </div>
+					                  <!-- /.input group -->
+					                </div>
+					                <!-- /.form group -->
+					              </div>
+					            </div>
+			                  </td>
+			                </tr>
+			                <tr>
+			               	  <th>반차 시간(오전)</th>
+			               	  <td>
+			               	  <div class="col-md-6">
+			               	  	<div class="bootstrap-timepicker">
+					                <div class="form-group">
+					                  <div class="input-group">
+					                    <input type="text" class="form-control timepicker">
+					
+					                    <div class="input-group-addon">
+					                      <i class="fa fa-clock-o"></i>
+					                    </div>
+					                  </div>
+					                  <!-- /.input group -->
+					                </div>
+					                <!-- /.form group -->
+					              </div>
+					            </div>
+					            <div class="col-md-6">
+				                <div class="bootstrap-timepicker">
+					                <div class="form-group">
+					                  <div class="input-group">
+					                    <input type="text" class="form-control timepicker">
+					
+					                    <div class="input-group-addon">
+					                      <i class="fa fa-clock-o"></i>
+					                    </div>
+					                  </div>
+					                  <!-- /.input group -->
+					                </div>
+					                <!-- /.form group -->
+					              </div>
+					            </div>
+					              </td>
+					              </tr>
+					              <tr>
+			               	  	<th>반차 시간(오후)</th>
+			               	  	<td>
+			               	  	  <div class="col-md-6">
+			               	  	 <div class="bootstrap-timepicker">
+					                <div class="form-group">
+					                  <div class="input-group">
+					                    <input type="text" class="form-control timepicker">
+					
+					                    <div class="input-group-addon">
+					                      <i class="fa fa-clock-o"></i>
+					                    </div>
+					                  </div>
+					                  <!-- /.input group -->
+					                </div>
+					                <!-- /.form group -->
+					              </div>
+					              </div>
+					              <div class="col-md-6">
+				                <div class="bootstrap-timepicker">
+					                <div class="form-group">
+					                  <div class="input-group">
+					                    <input type="text" class="form-control timepicker">
+					
+					                    <div class="input-group-addon">
+					                      <i class="fa fa-clock-o"></i>
+					                    </div>
+					                  </div>
+					                  <!-- /.input group -->
+					                </div>
+					                <!-- /.form group -->
+					              </div>
+					              </div>
+			               	  </td>
+			                </tr>
+		                </tbody>
+		              </table>
+		              <input type="submit" value="저장" class="btn btn-block btn-primary">
+		              <br><br><br>
+		              </form>
+		            </div>
+		            <!-- /.box-body -->
+		          </div>
+          <!-- /.box -->
+		
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"><span class="glyphicon glyphicon-wrench"></span> 기능 설정</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
+            <form>
               <table class="table table-hover">
                 <tbody>
 	                <tr>
-	                  <th>출/퇴근 기능</th><td>출/퇴근 허용IP 설정</td>
+	                  <th>출/퇴근 기능</th>
+	                  <td>
+	                  <div class="checkbox">
+                   		 <label><input type="checkbox">출/퇴근 허용IP 설정 </label>
+                   		 <a href="#"><i class="fa fa-gears"></i></a>
+                  	</div>
+                  	
+	                  </td>
 	                </tr>
 	                <tr>
-	               	  <th>로그인 기능</th><td>로그인시 출근 자동 등록</td>
+	               	  <th>로그인 기능</th>
+	               	  <td>
+	               	  <div class="checkbox">
+                   		 <label><input type="checkbox">로그인시 출근 자동 등록 </label>
+                  	</div>
+	               	  </td>
 	                </tr>
                 </tbody>
               </table>
+               <input type="submit" value="저장" class="btn btn-block btn-primary">
+              </form>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-        </div>
+      
 				
 				<!--  -->
               </div>
@@ -202,16 +235,3 @@
         </div>
 	</div>
 </div>
-<!-- bootstrap time picker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
-
-<script>
-	$(function(){
-		  //Timepicker
-	    $(".timepicker").timepicker({
-	      showInputs: false
-	    });
-
-	});
-</script>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.Calendar"%>
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.DecimalFormat"%>
@@ -49,50 +50,35 @@ public static String gettime(int mountdate){
 	return date;
 }
 %>
-<!-- jahee datepicker -->
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
 <div>
 	<h3 class="corpor_title"><span class="glyphicon glyphicon-time"></span> 출근 / 퇴근</h3><br>
-	<table cellpadding="0" cellspacing="0">
-		<colgroup>
-			<col width="10%">
-			<col width="10%">
-			<col width="10%">                            
-			<col width="10%">
-			<col width="10%">
-			<col width="10%">
-		</colgroup>
-		<tbody>
-			<tr>
-				<!-- Today 년월일 -->
-				<th class="date"><%out.print (getdate(0));%></th>
-				<th align="center">
-				<!-- 출근버튼 -->                   
-					<button type="button" class="btn btn-block btn-primary" id="btn_workstart" title="출근" style="width: 100px">출근</button>
-				</th>
-				<td>
-					<input type="text" id="txtworkstart" class="adminInput" value="" readonly="readonly">
-				</td>
-				<th>
-					<button type="button" class="btn btn-block btn-danger" id="btn_workend" title="퇴근" style="width: 100px">퇴근</button>
-				</th>
-				<td>
-					<input type="text" id="txtworkend" class="adminInput" value="" readonly="readonly">
-				</td>
-				<th id="div_holiday" class="holidayth"><%out.print (getyear(0));%> 휴일 </th>
-			</tr>
-		</tbody>
-	</table>
-	<br>
-	<div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">근태 신청</h3>
+			<div class="box-body">
+              <div class="row">
+                <div class="col-xs-2">
+                  <input type="text" class="form-control" value="<%out.print (getdate(0));%>" readonly="readonly">
+                </div>
+                <div class="col-xs-1">
+                  <button type="button" class="btn btn-block btn-primary" id="btn_workstart" title="출근" style="width: 100px">출근</button>
+                </div>
+                <div class="col-xs-2">
+                  <input type="text" class="form-control">
+                </div>
+                <div class="col-xs-1">
+                  <button type="button" class="btn btn-block btn-danger" id="btn_workend" title="퇴근" style="width: 100px">퇴근</button>
+                </div>
+                <div class="col-xs-2">
+                  <input type="text" class="form-control">
+                </div>
+                <div class="col-xs-2">
+                <input type="text" class="form-control" value="<%out.print (getyear(0));%> 휴일" readonly="readonly">
+                </div>
+              </div>
             </div>
-            <!-- /.box-header -->
+	<br>
+	<div class="box">
+              <h3 class="box-title"><span class="glyphicon glyphicon-time"></span> 근태 신청</h3>
             <!-- form start -->
-            <form role="form">
+            <form>
               <div class="box-body">
               	<div class="form-group">
                   <label for="work1">연차 현황</label>
@@ -114,64 +100,77 @@ public static String gettime(int mountdate){
                   </select>
                   </div>
                 <div>
+               
                 	<div class="form-group">
+                	
                   		<label for="exampleInputPassword1">일자/시간</label>
-               			<!-- jahee datepicker -->
-               			<div class="container">
-						    <div class='col-md-5'>
-						        <div class="form-group">
-						            <div class='input-group date' id='datetimepicker6'>
-						                <input type='text' class="form-control" />
-						                <span class="input-group-addon">
-						                    <span class="glyphicon glyphicon-calendar"></span>
-						                </span>
-						            </div>
-						        </div>
-						    </div>
-						    <div class='col-md-5'>
-						        <div class="form-group">
-						            <div class='input-group date' id='datetimepicker7'>
-						                <input type='text' class="form-control" />
-						                <span class="input-group-addon">
-						                    <span class="glyphicon glyphicon-calendar"></span>
-						                </span>
-						            </div>
-						        </div>
-						    </div>
-						</div>
+               			<!-- 연차-->
+               			<div class="form-group">
+			                <div class="input-group">
+			                  <div class="input-group-addon">
+			                    <i class="fa fa-calendar"></i>
+			                  </div>
+			                  <input type="text" class="form-control pull-right" id="reservation">
+			                </div>
+			                <!-- /.input group -->
+			              </div>
+			              <!-- 반자 -->
+			              
+			              <div class="form-group">
+			                <div class="input-group date">
+			                  <div class="input-group-addon">
+			                    <i class="fa fa-calendar"></i>
+			                  </div>
+			                  <input type="text" class="form-control pull-right" id="datepicker">
+			                </div>
+			                <div class="form-group">
+			                  <div class="radio" align="center">
+			                    <label>
+			                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+			                    	 오전
+			                    </label>
+			                    <label>
+			                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			                     	오후
+			                    </label>
+			                  </div>
+			                </div>
+			                <!-- /.input group -->
+			              </div>
+			              
+			              <!-- 지각 /조퇴-->
+			              
                 	</div>
 	                <!-- /.input group -->
 	              </div>
                 </div>
                 
                 <div class="form-group">
-                  <label for="exampleInputPassword3">사유</label>
-                  <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                <div>
+                  <label>사유</label>
+                  </div>
+                  <textarea class="form-control" rows="3" placeholder="사유를 적으세요."></textarea>
                 </div>
-                <div class="form-group">
+                </div>
+                 <div class="form-group">
                   <label for="exampleInputFile">첨부</label>
                   <input type="file" id="exampleInputFile">
-                  <p class="help-block">Example block-level help text here.</p>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword2">결재선 선택</label>
-                  <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                  <input type="password" class="form-control" id="exampleInputPassword2" placeholder="결재선 선택">
                 </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
-                </div>
+                <div class="box-footer">
+                <button type="submit" class="btn btn-block btn-primary">신청</button>
               </div>
+                </form>
+              </div>
+               
+                
+               
+              
               </div>
               <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
-          </div>
-
 
 <script>
     $(function () {
