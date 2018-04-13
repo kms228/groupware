@@ -7,6 +7,7 @@
 		<typeAlias type="com.jhta.groupware.work.vo.WorkVo" alias="work"/>
 		<typeAlias type="com.jhta.groupware.member.vo.MemberAccountVo" alias="account"/>
 		<typeAlias type="com.jhta.groupware.sign.vo.DocTypeVo" alias="doctype"/>
+		<typeAlias type="com.jhta.groupware.sign.vo.SignVo" alias="signdoc"/>
 	</typeAliases>
 	<mappers>
     	<mapper resource="com/jhta/groupware/mybatis/WorkMapper.xml"/>

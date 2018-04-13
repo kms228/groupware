@@ -67,5 +67,11 @@ public class SignVo {
 	public void setDoc_num(int doc_num) {
 		this.doc_num = doc_num;
 	}
+	@Override
+	public String toString() {
+		return "SignVo [sdoc_num=" + sdoc_num + ", sdoc_state=" + sdoc_state + ", sdoc_title=" + sdoc_title
+				+ ", sdoc_content=" + sdoc_content + ", sdoc_date=" + sdoc_date + ", emp_num=" + emp_num + ", doc_num="
+				+ doc_num + "]";
+	}
 	
 }
