@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- jQuery 2.2.3 -->
-	<script src="<c:url value='/'/>resources/plugins/jQuery/jquery-2.2.3.min.js" type="text/javascript"></script>
+<script src="<c:url value='/'/>resources/plugins/jQuery/jquery-2.2.3.min.js" type="text/javascript"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -49,7 +49,8 @@
 <script src="<c:url value='/'/>resources/js/ckeditor.js"></script>
 <!-- fullCalendar -->
 <script src="<c:url value='/'/>resources/plugins/fullcalendar/fullcalendar.js"></script>
-
+<!-- bootstrap time picker -->
+<script src="<c:url value="/"/>resources/plugins/timepicker/bootstrap-timepicker.min.js"></script>
   <link rel="stylesheet" href="<c:url value='/resources/css/common.css'/>"/>
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="<c:url value='/'/>resources/bootstrap/css/bootstrap.min.css">
@@ -77,8 +78,10 @@
   <!-- fullCalendar -->  
   <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/fullcalendar/fullcalendar.print.css" media="print">
   <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/fullcalendar/fullcalendar.css">
-  
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="<c:url value="/"/>resources/plugins/timepicker/bootstrap-timepicker.min.css">
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div id="wrapper">
 	<div id="header">
@@ -97,4 +100,41 @@
 	</div>
 </div>
 </body>
+<script>
+$(function () {
+    //Date range picker
+    $('#reservation').daterangepicker();
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+    //Date range as a button
+    $('#daterange-btn').daterangepicker(
+        {
+          ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          },
+          startDate: moment().subtract(29, 'days'),
+          endDate: moment()
+        },
+        function (start, end) {
+          $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+    );
+
+    //Date picker
+    $('#datepicker').datepicker({
+      autoclose: true
+    });
+
+    //Timepicker
+    $(".timepicker").timepicker({
+      showInputs: false
+    });
+  });
+
+</script>
 </html>

@@ -6,28 +6,47 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script src="<c:url value='/'/>resources/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
-	
+	$(function(){
+	$("#id").on('keypress',function(){
+		var id=("#id").val()
+		ajax({
+			url:"<c:url value='/join/usingid/"+id+"'/>",
+			dataType:"json",
+			success:function(data){
+				var using=data.id;
+				if(using='ture'){
+					$('#result').append("사용중입니다.");
+				}else{
+					$('#reslut').append("사용가능합니다.");
+				}
+			}
+		});
+	});
+});
 </script>
 </head>
 <body>
 	<h1>사원등록하기</h1>
-	<form action="<c:url value='/'/>join?addr=addr" method="post">
+	<form action="<c:url value='/'/>join?addr=" method="get">
 		<table style="margin-top: 40px;">
 			<tr>
-				<th>아이디</th>
-				<td><input type="text" name="ACNT_ID" required="required"></td>
+				<th>아이디(*)</th>
+				<td><input type="text" id="id" name="ACNT_ID" required="required"></td>
+				<td><span id="reslut"></span></td>
 			</tr>
 			<tr>
-				<th>비밀번호</th>
+				<th>비밀번호(*)</th>
 				<td><input type="password" name="ACNT_PWD" required="required"></td>
 			</tr>
 			<tr>
-				<th>비밀번호확인</th>
+				<th>비밀번호확인(*)</th>
 				<td><input type="password" name="ACNT_PWD2" required="required"></td>
 			</tr>
 			<tr>
-				<th>사원이름</th>
+				<th>사원이름(*)</th>
 				<td><input type="text" name="EMP_NAME" required="required">
 				<td>
 			</tr>
@@ -40,6 +59,7 @@
 				<th>주소</th>
 				<td><input type="text" id="sample4_postcode" name="addr" placeholder="우편번호"></td>
 				<td><input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"></td>
+				<tr></tr><th></th>
 				<td><input type="text" id="sample4_roadAddress" name="addr" placeholder="도로명주소"></td>
 				<td><input type="text" id="addr" placeholder="상세주소"></td>
 			</tr>
@@ -50,7 +70,7 @@
 			</tr>
 			<tr>
 				<th>이메일주소</th>
-				<td><input type="email" name="EMP_EMAIL" value="1"></td>
+				<td><input type="email" name="EMP_EMAIL" ></td>
 			</tr>
 			<tr>
 				<th>성별</th>
@@ -62,26 +82,18 @@
 				<td>
 			</tr>
 			<tr>
-				<td><input type="submit" value="가입"></td>
+				<th></th><td><input type="submit" value="가입">(*)은 필수입력사항입니다.</td>
 			</tr>
 		</table>
 		<input type="hidden" name="PST_NUM" value="7">
 		<input type="hidden" name="DEPT_NUM" value="0">
 		<input type="hidden" name="TEAM_NUM" value="1">
 	</form>
-	
-	<input type="text" id="sample4_postcode" placeholder="우편번호">
-<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-<input type="text" id="sample4_jibunAddress" placeholder="지번주소">
-<span id="guide" style="color:#999"></span>
-
-
-<input type="email" name="EMP_EMAIL" value="1">
-<input type="date" name="EMP_BIRTH">
 </body>
 </html>
 
+
+</script>
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
