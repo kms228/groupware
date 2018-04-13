@@ -22,11 +22,20 @@ public class JoinController {
 	}
 	//post방식으로 할땐 회원 가입시켜야함
 	@RequestMapping(value="/join",method=RequestMethod.POST)
-	public String joinOk(String ACNT_ID,String ACNT_PWD,int EMP_NUM,HttpSession session){
+	public String joinOk(String ACNT_ID,String ACNT_PWD,int EMP_NUM,
+			String EMP_NAME,String EMP_PHONE,String EMP_ADDR,
+			String EMP_BIRTH,String EMP_EMAIL,String EMP_GENDER, HttpSession session){
 		HashMap<String,Object>map= new HashMap<String, Object>();
 		map.put("ACNT_ID",ACNT_ID);
 		map.put("ACNT_PWD",ACNT_PWD);
 		map.put("EMP_NUM",EMP_NUM);
+		map.put("EMP_NAME",EMP_NAME);
+		map.put("EMP_PHONE",EMP_PHONE);
+		map.put("EMP_ADDR",EMP_ADDR);
+		map.put("EMP_BIRTH",EMP_BIRTH);
+		map.put("EMP_EMAIL",EMP_EMAIL);
+		map.put("EMP_GENDER",EMP_GENDER);
+		
 		int n = service.isMember(map);
 		if(n>0) {
 			System.out.println("성공");
