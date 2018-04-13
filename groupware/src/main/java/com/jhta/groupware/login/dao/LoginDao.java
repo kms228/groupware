@@ -17,8 +17,6 @@ public class LoginDao {
 	public MemberAccountVo login(HashMap<String, Object>map) {
 		return sqlsession.selectOne(NAMESPACE+".select",map);
 	}
-	public LoginVo logininfo(int EMP_NUM) {
-		return sql
-	}
+
 
 }
