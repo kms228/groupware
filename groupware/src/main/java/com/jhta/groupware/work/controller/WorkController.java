@@ -9,5 +9,9 @@ public class WorkController {
 	public String work_request() {
 		return ".work.work_request";
 	}
+	@RequestMapping("/setWork")
+	public String work_set() {
+		return ".work.work_set";
+	}
 	
 }

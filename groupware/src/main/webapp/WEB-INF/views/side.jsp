@@ -8,7 +8,7 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
-          <a href="<c:url value='/'/>signmain">
+          <a href="#">
             <i class="fa fa-dashboard"></i><span>결재</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -57,7 +57,7 @@
             <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> 신청 내역</a></li>
             <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> 승인 요청 내역</a></li>
             <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> 근태 현황 보기</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> (관리자)근태 설정</a></li>
+            <li><a href="<c:url value='/setWork'/>"><i class="fa fa-circle-o"></i> (관리자)근태 설정</a></li>
             <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> (관리자)전체 리스트</a></li>
           </ul>
         </li>
