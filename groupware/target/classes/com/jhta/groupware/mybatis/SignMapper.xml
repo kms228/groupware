@@ -6,6 +6,9 @@
 	<select id="getdoc" parameterType="int" resultType="doctype">
 		select * from doc_type where doc_num=#{num}
 	</select>
+	<select id="nowlist" resultType="signdoc">
+		select * from sign_doc where sdoc_state=0
+	</select>
 </mapper>
 
 

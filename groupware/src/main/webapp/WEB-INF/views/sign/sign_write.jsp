@@ -2,14 +2,22 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript" src="<c:url value='/'/>resources/se2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
-<script src="<c:url value='/'/>resources/js/jquery-3.3.1.min.js"></script>
 <h1>문서작성</h1>
 <hr>
-<h2>문서종류 : ${vo.doc_name }</h2>
+<h3>
+<span class="fa fa-fw fa-file-text"></span>
+문서종류 : ${vo.doc_name }
+</h3>
+
 <div>
 	<form method="post" action="<c:url value='/'/>addsign" id="write_form">
+		<div>
+			<input type="button" value="결재선 선택">
+		</div>
+		<div>
 		<textarea name="ir1" id="ir1" rows="10" cols="100">${vo.doc_content }</textarea>
-		<input type="button" value="등록" id="submit_btn">
+		</div>
+		<input type="button" class="btn btn-primary" value="등록" id="submit_btn">
 	</form>
 </div>
 <script type="text/javascript">

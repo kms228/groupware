@@ -5,12 +5,13 @@
 <script>
   $(function () {	
 	//Date picker
-	  $('#datepicker_start').datepicker({
-	    autoclose: true
-	  });
-	  $('#datepicker_end').datepicker({
-		    autoclose: true
-	  });
+	  $('#daterangepicker').daterangepicker({ 
+		  singleDatePicker: true,
+		  timePicker: true,
+		  autoclose: true,
+		  timePickerIncrement: 30, 
+		  format: 'MM/DD/YYYY hh:mm A' 
+	  });	    
 	  
     /* initialize the external events
      -----------------------------------------------------------------*/
@@ -53,7 +54,7 @@
       },
       buttonText: {        
       },
-      locale:'ko',
+      locale:'ko',      
       //Random default events
       events    : [
         {
@@ -189,7 +190,7 @@
           <!-- /. box -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">일정등록 하기</h3>
+              <h3 class="box-title">일정등록</h3>
             </div>
             <div class="box-body">
               <!-- <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
@@ -213,32 +214,32 @@
                                                      
               <!-- text input -->
               <div class="form-group">
-              	<form method="post" action="<c:url value='/'/>schedule" enctype="">
+              	<form method="post" action="<c:url value='/'/>schedule" enctype="multipart/form-data">
+              	<input type="hidden" name="emp_num" value="">
                 <label>일정이름</label>
-                <input type="text" class="form-control" placeholder="Enter ...">
+                <input type="text" name="sch_title" class="form-control" placeholder="Enter ...">
                 <label>장소</label>
-                <input type="text" class="form-control" placeholder="Enter ...">              
+                <input type="text" name="sch_place" class="form-control" placeholder="Enter ...">           
               <!-- Date -->
                 <label>시작일:</label>
                 <div class="input-group date">
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker_start">
+                  <input type="text" name="sch_sdate" class="form-control pull-right" id="daterangepicker_start">
                 </div>
-                <!-- /.input group -->              			  
                 <label>종료일:</label>
                 <div class="input-group date">
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker_end">
+                  <input type="text" name="sch_edate" class="form-control pull-right" id="daterangepicker_end">
                 </div>
-                <!-- /.input group -->
+                
                 <label>내용</label>
-                <textarea class="form-control" rows="7" placeholder="Enter ..."></textarea>
+                <textarea class="form-control" rows="7" placeholder="Enter ..." name="sch_content"></textarea>
                 <label>공개여부</label>
-                  <select class="form-control">
+                  <select class="form-control" name="sch_public">
                   	<option value="0">비공개</option>
                     <option value="7">사원</option>
                     <option value="6">주임</option>
@@ -247,9 +248,10 @@
                     <option value="3">차장</option>
                     <option value="2">부장</option>
                     <option value="1">사장</option>
-                  </select>
-                  <label for="exampleInputFile">첨부파일</label>
-                  <input type="file" id="exampleInputFile">
+                  </select>                  
+                  <label for="inputFile">첨부파일</label>
+                  <input type="file" id="inputFile" name="sf_orgfilename">
+                                                                     
                   <br>
                   <input type="submit" class="btn btn-primary" value="일정 등록">
                   </form>                                                             
