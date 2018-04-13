@@ -13,10 +13,7 @@
 			<div class="navbar-custom-menu">
 				<ul class="nav navbar-nav">
 					<!-- Messages: style can be found in dropdown.less-->
-<<<<<<< HEAD
-				
-=======
->>>>>>> branch 'master' of https://github.com/kms228/groupware.git
+
 					<c:choose>
 					<c:when test="${ACNT_ID==null}">
 					<li class="dropdown login-menu"><a href="<c:url value='/login'/>">로그인</a>
