@@ -9,7 +9,7 @@
 <div>
 	<form method="post" action="<c:url value='/'/>addsign" id="write_form">
 		<textarea name="ir1" id="ir1" rows="10" cols="100">${vo.doc_content }</textarea>
-		<input type="button" value="등록" id="submit_btn">
+		<input type="button" class="btn btn-primary" value="등록" id="submit_btn">
 	</form>
 </div>
 <script type="text/javascript">
