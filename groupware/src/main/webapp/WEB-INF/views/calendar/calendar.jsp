@@ -1,10 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<script src="<c:url value='/'/>resources/plugins/fullcalendar/ko.js"></script>
 <script>
-  $(function () {
-
+  $(function () {	
+	//Date picker
+	  $('#datepicker_start').datepicker({
+	    autoclose: true
+	  });
+	  $('#datepicker_end').datepicker({
+		    autoclose: true
+	  });
+	  
     /* initialize the external events
      -----------------------------------------------------------------*/
     function init_events(ele) {
@@ -38,18 +45,15 @@
     var d    = date.getDate(),
         m    = date.getMonth(),
         y    = date.getFullYear()
-    $('#calendar').fullCalendar({
+    $('#calendar').fullCalendar({      
       header    : {
         left  : 'prev,next today',
         center: 'title',
         right : 'month,agendaWeek,agendaDay'
       },
-      buttonText: {
-        today: 'today',
-        month: 'month',
-        week : 'week',
-        day  : 'day'
+      buttonText: {        
       },
+      locale:'ko',
       //Random default events
       events    : [
         {
@@ -183,13 +187,13 @@
         <div class="col-md-3">
           
           <!-- /. box -->
-          <div class="box box-solid">
+          <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Create Event</h3>
+              <h3 class="box-title">일정등록 하기</h3>
             </div>
             <div class="box-body">
-              <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                <!--<button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>-->
+              <!-- <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                <button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>
                 <ul class="fc-color-picker" id="color-chooser">
                   <li><a class="text-aqua" href="#"><i class="fa fa-square"></i></a></li>
                   <li><a class="text-blue" href="#"><i class="fa fa-square"></i></a></li>
@@ -205,16 +209,53 @@
                   <li><a class="text-muted" href="#"><i class="fa fa-square"></i></a></li>
                   <li><a class="text-navy" href="#"><i class="fa fa-square"></i></a></li>
                 </ul>
-              </div>
-              <!-- /btn-group -->
-              <div class="input-group">
-                <input id="new-event" type="text" class="form-control" placeholder="Event Title">
-
-                <div class="input-group-btn">
-                  <button id="add-new-event" type="button" class="btn btn-primary btn-flat">Add</button>
+              </div> -->
+                                                     
+              <!-- text input -->
+              <div class="form-group">
+              	<form method="post" action="<c:url value='/'/>schedule" enctype="">
+                <label>일정이름</label>
+                <input type="text" class="form-control" placeholder="Enter ...">
+                <label>장소</label>
+                <input type="text" class="form-control" placeholder="Enter ...">              
+              <!-- Date -->
+                <label>시작일:</label>
+                <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="datepicker_start">
                 </div>
-                <!-- /btn-group -->
-              </div>
+                <!-- /.input group -->              			  
+                <label>종료일:</label>
+                <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="datepicker_end">
+                </div>
+                <!-- /.input group -->
+                <label>내용</label>
+                <textarea class="form-control" rows="7" placeholder="Enter ..."></textarea>
+                <label>공개여부</label>
+                  <select class="form-control">
+                  	<option value="0">비공개</option>
+                    <option value="7">사원</option>
+                    <option value="6">주임</option>
+                    <option value="5">대리</option>
+                    <option value="4">과장</option>
+                    <option value="3">차장</option>
+                    <option value="2">부장</option>
+                    <option value="1">사장</option>
+                  </select>
+                  <label for="exampleInputFile">첨부파일</label>
+                  <input type="file" id="exampleInputFile">
+                  <br>
+                  <input type="submit" class="btn btn-primary" value="일정 등록">
+                  </form>                                                             
+              </div>                                                  
+              <!-- /.form group -->
+                            
               <!-- /input-group -->
             </div>
           </div>
@@ -235,4 +276,4 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-  </div>
+  </div>  
