@@ -7,12 +7,9 @@
 		<typeAlias type="com.jhta.groupware.work.vo.WorkVo" alias="work"/>
 		<typeAlias type="com.jhta.groupware.member.vo.MemberAccountVo" alias="account"/>
 		<typeAlias type="com.jhta.groupware.sign.vo.DocTypeVo" alias="doctype"/>
-<<<<<<< HEAD
 		<typeAlias type="com.jhta.groupware.vo.calendar.ScheduleVo" alias="scheduleVo"/>
-=======
 		<typeAlias type="com.jhta.groupware.sign.vo.SignVo" alias="signdoc"/>
 		<typeAlias type="com.jhta.groupware.login.vo.LoginVo" alias="LoginVo"/>
->>>>>>> branch 'master' of https://github.com/kms228/groupware.git
 	</typeAliases>
 	<mappers>
     	<mapper resource="com/jhta/groupware/mybatis/WorkMapper.xml"/>
