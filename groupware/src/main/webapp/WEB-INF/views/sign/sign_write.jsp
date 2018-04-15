@@ -12,7 +12,7 @@
 <div>
 	<form method="post" action="<c:url value='/'/>addsign" id="write_form">
 		<div>
-			<input type="button" value="결재선 선택">
+			<input type="button" value="결재선 선택" id="line_btn">
 		</div>
 		<div>
 		<textarea name="ir1" id="ir1" rows="10" cols="100">${vo.doc_content }</textarea>
@@ -40,6 +40,7 @@ $(function () {
 		    oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
 		    $("#write_form").submit();
 		});
+		
 });
 
 </script>
