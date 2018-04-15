@@ -5,13 +5,20 @@
 <script>
   $(function () {	
 	//Date picker
-	  $('#daterangepicker').daterangepicker({ 
+	  $('#daterangepicker_start').daterangepicker({ 
 		  singleDatePicker: true,
 		  timePicker: true,
 		  autoclose: true,
 		  timePickerIncrement: 30, 
 		  format: 'MM/DD/YYYY hh:mm A' 
 	  });	    
+	  $('#daterangepicker_end').daterangepicker({ 
+		  singleDatePicker: true,
+		  timePicker: true,
+		  autoclose: true,
+		  timePickerIncrement: 30, 
+		  format: 'MM/DD/YYYY hh:mm A' 
+	  });
 	  
     /* initialize the external events
      -----------------------------------------------------------------*/
@@ -215,7 +222,7 @@
               <!-- text input -->
               <div class="form-group">
               	<form method="post" action="<c:url value='/'/>schedule" enctype="multipart/form-data">
-              	<input type="hidden" name="emp_num" value="">
+              	<input type="hidden" name="emp_num" value="3">
                 <label>일정이름</label>
                 <input type="text" name="sch_title" class="form-control" placeholder="Enter ...">
                 <label>장소</label>
@@ -250,7 +257,7 @@
                     <option value="1">사장</option>
                   </select>                  
                   <label for="inputFile">첨부파일</label>
-                  <input type="file" id="inputFile" name="sf_orgfilename">
+                  <input type="file" id="inputFile" name="file1">
                                                                      
                   <br>
                   <input type="submit" class="btn btn-primary" value="일정 등록">

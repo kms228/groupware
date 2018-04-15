@@ -80,6 +80,9 @@
   <link rel="stylesheet" href="<c:url value='/'/>resources/plugins/fullcalendar/fullcalendar.css">
   <!-- Bootstrap time Picker -->
   <link rel="stylesheet" href="<c:url value="/"/>resources/plugins/timepicker/bootstrap-timepicker.min.css">
+   <!-- DataTables -->
+  <link rel="stylesheet" href="<c:url value="/"/>resources/plugins/datatables/dataTables.bootstrap.css">
+  
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
