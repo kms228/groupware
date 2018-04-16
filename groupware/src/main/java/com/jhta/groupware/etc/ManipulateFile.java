@@ -19,6 +19,9 @@ public class ManipulateFile {
 	public ManipulateFile(MultipartFile file,HttpSession session) {
 		this.file = file;
 		this.session = session;
+//		System.out.println("getcontenttype: "+file.getContentType());
+//		System.out.println("getname: "+file.getName());
+//		System.out.println("originalfilename: "+file.getOriginalFilename());
 	}
 	
 	//session.getServletContext().getRealPath()에서 더 붙일 경로명을 'String path' 넣음
@@ -42,7 +45,7 @@ public class ManipulateFile {
 			fos=new FileOutputStream(uploadPath +File.separator+ savefilename);
 			
 			//파일복사하기
-			FileCopyUtils.copy(is,fos);										
+			FileCopyUtils.copy(is,fos);							
 		}catch(IOException ie) {
 			System.out.println(ie.getMessage());
 			return null;

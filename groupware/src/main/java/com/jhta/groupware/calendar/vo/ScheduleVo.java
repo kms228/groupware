@@ -1,4 +1,4 @@
-package com.jhta.groupware.vo.calendar;
+package com.jhta.groupware.calendar.vo;
 
 import java.util.Date;
 

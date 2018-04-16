@@ -1,4 +1,4 @@
-package com.jhta.groupware.controller.calendar;
+package com.jhta.groupware.calendar.controller;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.jhta.groupware.service.calendar.CalendarService;
-import com.jhta.groupware.vo.calendar.ScheduleVo;
+import com.jhta.groupware.calendar.service.CalendarService;
+import com.jhta.groupware.calendar.vo.ScheduleVo;
 
 @Controller
 public class CalendarController {

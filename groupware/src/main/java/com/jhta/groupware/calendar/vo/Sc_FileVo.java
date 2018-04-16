@@ -1,4 +1,4 @@
-package com.jhta.groupware.vo.calendar;
+package com.jhta.groupware.calendar.vo;
 
 public class Sc_FileVo {
 	private int sf_num;

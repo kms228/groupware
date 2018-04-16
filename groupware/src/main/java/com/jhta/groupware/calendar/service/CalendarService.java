@@ -1,6 +1,4 @@
-package com.jhta.groupware.service.calendar;
-
-import java.util.HashMap;
+package com.jhta.groupware.calendar.service;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.jhta.groupware.dao.calendar.CalendarDao;
+import com.jhta.groupware.calendar.dao.CalendarDao;
+import com.jhta.groupware.calendar.vo.Sc_FileVo;
+import com.jhta.groupware.calendar.vo.ScheduleVo;
 import com.jhta.groupware.etc.ManipulateFile;
-import com.jhta.groupware.vo.calendar.Sc_FileVo;
-import com.jhta.groupware.vo.calendar.ScheduleVo;
 
 @Service
 public class CalendarService {
@@ -23,7 +21,8 @@ public class CalendarService {
 			ManipulateFile file = new ManipulateFile(file1,session);		
 			String saveFileName = file.copyFileToServer("/resources/upload/calendar");
 			System.out.println(saveFileName);
-			Sc_FileVo vo1 = new Sc_FileVo(0, saveFileName, file1.getOriginalFilename(), file1.getSize(), dao.getSch_num(vo.getSch_num()));
+			System.out.println("emp_num :"+vo.getEmp_num());
+			Sc_FileVo vo1 = new Sc_FileVo(0, saveFileName, file1.getOriginalFilename(), file1.getSize(), dao.getSch_num(vo.getEmp_num()));
 			result = dao.sc_File(vo1);				
 		}				
 		return result;
