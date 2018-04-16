@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!-- DataTables -->
+<script src="<c:url value='/'/>resources/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<c:url value='/'/>resources/plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+
 <div>
 	<h3><span class="glyphicon glyphicon-cog"></span> 근태 설정</h3>
 	<div class="box">
@@ -11,7 +16,7 @@
               <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">기본 설정</a></li>
               <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">카테고리 설정</a></li>
               <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">관리자 설정</a></li>
-              <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">사용자 휴가 설정</a></li>
+              <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">사원 연차 설정</a></li>
               <li class=""><a href="#tab_5" data-toggle="tab" aria-expanded="false">연간 휴가 설정</a></li>
             </ul>
             <div class="tab-content">
@@ -136,7 +141,9 @@
 			                </tr>
 		                </tbody>
 		              </table>
+		               <div class="box-footer">
 		              <input type="submit" value="저장" class="btn btn-block btn-primary">
+		              </div>
 		              <br><br><br>
 		              </form>
 		            </div>
@@ -173,50 +180,145 @@
 	                </tr>
                 </tbody>
               </table>
+               <div class="box-footer">
                <input type="submit" value="저장" class="btn btn-block btn-primary">
+               </div>
               </form>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-      
-				
-				<!--  -->
-              </div>
+         </div>
               <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_2">
-               <b>기능 설정</b>
-
-                <p>Exactly like the original bootstrap tabs except you should use
-                  the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-                A wonderful serenity has taken possession of my entire soul,
-                like these sweet mornings of spring which I enjoy with my whole heart.
-                I am alone, and feel the charm of existence in this spot,
-                which was created for the bliss of souls like mine. I am so happy,
-                my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                that I neglect my talents. I should be incapable of drawing a single stroke
-                at the present moment; and yet I feel that I never was a greater artist than now.
+         <div class="tab-pane" id="tab_2">
+             
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"><span class="glyphicon glyphicon-wrench"></span> 카테고리 설정</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+            <form>
+              <table class="table table-hover">
+                <tbody>
+	                <tr>
+	                  <th>출/퇴근 기능</th>
+	                  <td>
+	                 <div class="form-group">
+	                 
+	                  <div class="checkbox">
+	                    <label>
+	                      <input type="checkbox">
+	                      	연차
+	                    </label>
+	                  </div>
+	
+	                  <div class="checkbox">
+	                    <label>
+	                      <input type="checkbox">
+	                    	  반차	
+	                    </label>
+	                  </div>
+	                  
+	                   <div class="checkbox">
+	                    <label>
+	                      <input type="checkbox">
+	                      	지각
+	                    </label>
+	                  </div>
+	                  
+	                   <div class="checkbox">
+	                    <label>
+	                      <input type="checkbox">
+	                     	조퇴
+	                    </label>
+	                  </div>
+	                  
+	                   <div class="checkbox">
+	                    <label>
+	                      <input type="checkbox">
+	                      	야근
+	                    </label>
+	                  </div>
+	                  
+                </div>
+	                  </td>
+	                </tr>
+                </tbody>
+              </table>
+               <div class="box-footer">
+                 <input type="submit" value="저장" class="btn btn-block btn-primary">
+               </div>
+              </form>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_3">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum.
+                <div class="box">
+		            <div class="box-header">
+		              <h3 class="box-title"><span class="glyphicon glyphicon-user"></span> 관리자 설정</h3>
+		
+		              <div class="box-tools">
+		                <div class="input-group input-group-sm" style="width: 150px;">
+		                  <input type="text" name="table_search" class="form-control pull-right" value="관리자선택" readonly="readonly">
+		
+		                  <div class="input-group-btn">
+		                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+		                  </div>
+		                </div>
+		              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+            <form>
+              <table class="table table-hover">
+                <tbody><tr>
+                  <th>ID</th>
+                  <th>User</th>
+                  <th>Dept</th>
+                  <th>Position</th>
+                </tr>
+                <tr>
+                  <td>183</td>
+                  <td>John Doe</td>
+                  <td>인사팀</td>
+                  <td><span class="label label-success">대리</span></td>
+                </tr>
+                <tr>
+                  <td>219</td>
+                  <td>Alexander Pierce</td>
+                  <td>인사팀</td>
+                  <td><span class="label label-warning">부장</span></td>
+                </tr>
+                <tr>
+                  <td>657</td>
+                  <td>Bob Doe</td>
+                  <td>본사</td>
+                  <td><span class="label label-primary">본부장</span></td>
+                </tr>
+                <tr>
+                  <td>175</td>
+                  <td>Mike Doe</td>
+                  <td>본사</td>
+                  <td><span class="label label-danger">이사</span></td>
+                </tr>
+              </tbody></table>
+              </form>
+              <div class="box-footer">
+                 <input type="submit" value="저장" class="btn btn-block btn-primary">
+               </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_4">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum.
-              </div>
+                Lorem Ipsum is simply du
+            <!-- /.box-body -->
+          		</div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_5">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -235,3 +337,17 @@
         </div>
 	</div>
 </div>
+<script>
+  $(function () {
+	$("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
+

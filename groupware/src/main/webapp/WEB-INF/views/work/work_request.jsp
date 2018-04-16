@@ -151,8 +151,7 @@ public static String gettime(int mountdate){
                   </div>
                   <textarea class="form-control" rows="3" placeholder="사유를 적으세요."></textarea>
                 </div>
-                </div>
-                 <div class="form-group">
+                <div class="form-group">
                   <label for="exampleInputFile">첨부</label>
                   <input type="file" id="exampleInputFile">
                 </div>
@@ -163,6 +162,8 @@ public static String gettime(int mountdate){
                 <div class="box-footer">
                 <button type="submit" class="btn btn-block btn-primary">신청</button>
               </div>
+              </div>
+                 
                 </form>
               </div>
                
